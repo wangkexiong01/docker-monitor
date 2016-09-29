@@ -1,0 +1,7 @@
+{% import theme('macros.html') as macros %}
+
+{% call macros.render_form(form, action_url=url_for('account.login'), action_text=form.submit.label.text) %}
+    {{ macros.render_field(form.account, label_visible=false, placeholder=form.account.label.text, type='email', autofocus=true) }}
+    {{ macros.render_field(form.password, label_visible=false, placeholder=form.password.label.text, type='password') }}
+    {{ macros.render_checkbox_field(form.remember) }}
+{% endcall %}
