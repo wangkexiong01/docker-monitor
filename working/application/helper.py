@@ -5,7 +5,7 @@ from random import choice
 import datetime
 
 from flask import current_app
-from flaskext.themes import render_theme_template
+from flask.ext.themes2 import render_theme_template
 from flask_mail import Message
 
 from application.extensions import mail
