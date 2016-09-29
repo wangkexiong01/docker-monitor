@@ -1,0 +1,25 @@
+language: python
+python:
+  - 2.7
+
+env:
+  global:
+    - COMMIT=${TRAVIS_COMMIT::8}
+
+services:
+  - docker
+
+before_install:
+  - export REPO=wangkexiong02/monitor
+
+install:
+  - docker build -t $REPO:$COMMIT .
+
+script:
+  - docker run -t $REPO:$COMMIT python --version
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker push $REPO:$TAG
