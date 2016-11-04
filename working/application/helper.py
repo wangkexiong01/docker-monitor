@@ -8,7 +8,7 @@ from flask import current_app
 from flask.ext.themes2 import render_theme_template
 from flask_mail import Message
 
-from application.extensions import mail
+from .extensions import mail
 
 
 def get_theme():

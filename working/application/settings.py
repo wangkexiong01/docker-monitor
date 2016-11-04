@@ -4,7 +4,7 @@
 Default configurations
 """
 
-from application.helper import gen_randomkey
+from .helper import gen_randomkey
 
 
 # Debug
@@ -14,7 +14,7 @@ DEBUG = False
 DEBUG_LOGGER = ''
 
 # DB
-SQLALCHEMY_DATABASE_URI = 'sqlite:///../database/users.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///../database/application.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 # WTF Secret
@@ -32,6 +32,3 @@ MAIL_USE_SSL = False
 MAIL_DEBUG = False
 MAIL_USERNAME = ''
 MAIL_PASSWORD = ''
-
-# Job Settings
-FAILDAYS4REMOVE = 3

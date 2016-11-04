@@ -7,9 +7,9 @@ from flask import Flask, Blueprint
 
 from flask.ext.themes2 import Themes
 
-from application import views
-from application.extensions import db, mail
-from application.jobs import daemonlized_jobs
+from . import views
+from .extensions import db, mail
+from .jobs import daemonlized_jobs
 
 
 def create_app(app_name, config):

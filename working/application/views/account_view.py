@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from application.forms import LoginForm
-from application.helper import render
+from ..forms import LoginForm
+from ..helper import render
 
 from flask import Blueprint, request
 
