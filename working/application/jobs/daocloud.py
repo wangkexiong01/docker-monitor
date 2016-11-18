@@ -20,7 +20,7 @@ def daocloud_appcheck(token, account, logger):
             info = resp.json()
             if 'app' in info:
                 for app in info['app']:
-                    if 'state' in app and app['state'] == 'sleeping' and 'id' in app:
+                    if 'state' in app and app['state'] != 'running' and 'id' in app:
                         sleeping_apps.append(app['id'])
 
                         if 'name' in app:
