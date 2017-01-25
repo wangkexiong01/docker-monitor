@@ -47,7 +47,6 @@ def daocloud_job(app, executor):
     logger = app.logger
 
     silence = random.randrange(60, 300)  # Delay for 1min~5min
-    logger.info('Generally delay %d seconds ... ' % silence)
     time.sleep(silence)
 
     # Define callback for jobs
